@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -18,14 +20,27 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        width: 200,
+        decoration: BoxDecoration(
+            color: Color.fromARGB(255, 9, 44, 105),
+            gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  Color.fromARGB(255, 9, 44, 105),
+                  Color.fromARGB(255, 11, 55, 105),
+                  Color.fromARGB(255, 48, 53, 141),
+                  Color.fromARGB(255, 105, 15, 105),
+                  Color.fromARGB(255, 9, 44, 105),
+                ])),
         alignment: AlignmentDirectional.topEnd,
         padding: EdgeInsets.all(15),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Login',
-              style: Theme.of(context).textTheme.headlineMedium,
+              'Welcome !',
+              style: TextStyle(fontSize: 35, color: hexToColor("#FFFFFFFF")),
             ),
             const SizedBox(height: 10),
             const TextField(
@@ -70,7 +85,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 onPressed: () {
                   Navigator.pushNamed(context, 'HomeScreen');
                 },
-                child: const Center(child: Text('Login')))
+                child: const Center(child: Text('SIGN UP')))
           ],
         ),
       ),
